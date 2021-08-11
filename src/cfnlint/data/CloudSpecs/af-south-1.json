@@ -28261,6 +28261,12 @@
           "PrimitiveType": "String",
           "Required": true,
           "UpdateType": "Immutable"
+        },
+        "RepositoryAuthConfig": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig",
+          "Required": false,
+          "Type": "RepositoryAuthConfig",
+          "UpdateType": "Immutable"
         }
       }
     },
@@ -28282,6 +28288,17 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-multimodelconfig.html#cfn-sagemaker-model-containerdefinition-multimodelconfig-modelcachesetting",
           "PrimitiveType": "String",
           "Required": false,
+          "UpdateType": "Immutable"
+        }
+      }
+    },
+    "AWS::SageMaker::Model.RepositoryAuthConfig": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig.html",
+      "Properties": {
+        "RepositoryCredentialsProviderArn": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig-repositorycredentialsproviderarn",
+          "PrimitiveType": "String",
+          "Required": true,
           "UpdateType": "Immutable"
         }
       }
@@ -29095,6 +29112,24 @@
         }
       }
     },
+    "AWS::Synthetics::Canary.BaseScreenshot": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html",
+      "Properties": {
+        "IgnoreCoordinates": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-ignorecoordinates",
+          "PrimitiveItemType": "String",
+          "Required": false,
+          "Type": "List",
+          "UpdateType": "Mutable"
+        },
+        "ScreenshotName": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-screenshotname",
+          "PrimitiveType": "String",
+          "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::Synthetics::Canary.Code": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-code.html",
       "Properties": {
@@ -29198,6 +29233,24 @@
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html#cfn-synthetics-canary-vpcconfig-vpcid",
           "PrimitiveType": "String",
           "Required": false,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
+    "AWS::Synthetics::Canary.VisualReference": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html",
+      "Properties": {
+        "BaseCanaryRunId": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basecanaryrunid",
+          "PrimitiveType": "String",
+          "Required": true,
+          "UpdateType": "Mutable"
+        },
+        "BaseScreenshots": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basescreenshots",
+          "ItemType": "BaseScreenshot",
+          "Required": false,
+          "Type": "List",
           "UpdateType": "Mutable"
         }
       }
@@ -31591,7 +31644,7 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "39.8.0",
+  "ResourceSpecificationVersion": "39.9.0",
   "ResourceTypes": {
     "AWS::ACMPCA::Certificate": {
       "Attributes": {
@@ -34342,12 +34395,56 @@
         }
       }
     },
+    "AWS::Athena::PreparedStatement": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-preparedstatement.html",
+      "Properties": {
+        "Description": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-preparedstatement.html#cfn-athena-preparedstatement-description",
+          "PrimitiveType": "String",
+          "Required": false,
+          "UpdateType": "Mutable",
+          "Value": {
+            "ValueType": "AWS::Athena::PreparedStatement.Description"
+          }
+        },
+        "QueryStatement": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-preparedstatement.html#cfn-athena-preparedstatement-querystatement",
+          "PrimitiveType": "String",
+          "Required": true,
+          "UpdateType": "Mutable",
+          "Value": {
+            "ValueType": "AWS::Athena::PreparedStatement.QueryStatement"
+          }
+        },
+        "StatementName": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-preparedstatement.html#cfn-athena-preparedstatement-statementname",
+          "PrimitiveType": "String",
+          "Required": true,
+          "UpdateType": "Immutable",
+          "Value": {
+            "ValueType": "AWS::Athena::PreparedStatement.StatementName"
+          }
+        },
+        "WorkGroup": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-preparedstatement.html#cfn-athena-preparedstatement-workgroup",
+          "PrimitiveType": "String",
+          "Required": true,
+          "UpdateType": "Immutable",
+          "Value": {
+            "ValueType": "AWS::Athena::PreparedStatement.WorkGroup"
+          }
+        }
+      }
+    },
     "AWS::Athena::WorkGroup": {
       "Attributes": {
         "CreationTime": {
           "PrimitiveType": "String"
         },
         "WorkGroupConfiguration.EngineVersion.EffectiveEngineVersion": {
+          "PrimitiveType": "String"
+        },
+        "WorkGroupConfigurationUpdates.EngineVersion.EffectiveEngineVersion": {
           "PrimitiveType": "String"
         }
       },
@@ -51130,6 +51227,15 @@
             "ValueType": "AWS::S3::AccessPoint.Bucket"
           }
         },
+        "Name": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-name",
+          "PrimitiveType": "String",
+          "Required": false,
+          "UpdateType": "Immutable",
+          "Value": {
+            "ValueType": "AWS::S3::AccessPoint.Name"
+          }
+        },
         "Policy": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-policy",
           "PrimitiveType": "Json",
@@ -51506,6 +51612,24 @@
       },
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html",
       "Properties": {
+        "AccessType": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-accesstype",
+          "PrimitiveType": "String",
+          "Required": false,
+          "UpdateType": "Immutable",
+          "Value": {
+            "ValueType": "AWS::S3Outposts::Endpoint.AccessType"
+          }
+        },
+        "CustomerOwnedIpv4Pool": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-customerownedipv4pool",
+          "PrimitiveType": "String",
+          "Required": false,
+          "UpdateType": "Immutable",
+          "Value": {
+            "ValueType": "AWS::S3Outposts::Endpoint.CustomerOwnedIpv4Pool"
+          }
+        },
         "OutpostId": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-outpostid",
           "PrimitiveType": "String",
@@ -54818,6 +54942,12 @@
           "Required": false,
           "Type": "VPCConfig",
           "UpdateType": "Mutable"
+        },
+        "VisualReference": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-visualreference",
+          "Required": false,
+          "Type": "VisualReference",
+          "UpdateType": "Mutable"
         }
       }
     },
@@ -56041,6 +56171,22 @@
       "StringMin": 1
     },
     "AWS::Athena::NamedQuery.WorkGroup": {
+      "StringMax": 128,
+      "StringMin": 1
+    },
+    "AWS::Athena::PreparedStatement.Description": {
+      "StringMax": 1024,
+      "StringMin": 1
+    },
+    "AWS::Athena::PreparedStatement.QueryStatement": {
+      "StringMax": 262144,
+      "StringMin": 1
+    },
+    "AWS::Athena::PreparedStatement.StatementName": {
+      "StringMax": 256,
+      "StringMin": 1
+    },
+    "AWS::Athena::PreparedStatement.WorkGroup": {
       "StringMax": 128,
       "StringMin": 1
     },
@@ -59769,6 +59915,11 @@
       "StringMax": 255,
       "StringMin": 3
     },
+    "AWS::S3::AccessPoint.Name": {
+      "AllowedPatternRegex": "^[a-z0-9]([a-z0-9\\-]*[a-z0-9])?$",
+      "StringMax": 50,
+      "StringMin": 3
+    },
     "AWS::S3::AccessPoint.VpcConfiguration.VpcId": {
       "StringMax": 1024,
       "StringMin": 1
@@ -59827,6 +59978,15 @@
       "AllowedPatternRegex": "^arn:[^:]+:s3-outposts:[a-zA-Z0-9\\-]+:\\d{12}:outpost\\/[^:]+\\/bucket\\/[^:]+$",
       "StringMax": 2048,
       "StringMin": 20
+    },
+    "AWS::S3Outposts::Endpoint.AccessType": {
+      "AllowedValues": [
+        "CustomerOwnedIp",
+        "Private"
+      ]
+    },
+    "AWS::S3Outposts::Endpoint.CustomerOwnedIpv4Pool": {
+      "AllowedPatternRegex": "^ipv4pool-coip-([0-9a-f]{17})$"
     },
     "AWS::S3Outposts::Endpoint.NetworkInterface.NetworkInterfaceId": {
       "StringMax": 100,
